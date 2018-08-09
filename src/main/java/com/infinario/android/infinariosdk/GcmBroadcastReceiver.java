@@ -9,7 +9,6 @@ public class GcmBroadcastReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        ComponentName comp = new ComponentName(context.getPackageName(), GcmIntentService.class.getName());
-        context.startService(intent.setComponent(comp));
+        Infinario.handleGooglePushNotification(context, intent);
     }
 }

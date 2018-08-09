@@ -6,29 +6,30 @@
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
 
-    <permission android:name="com.example.gcm.permission.C2D_MESSAGE"
+    <permission
+        android:name="com.example.gcm.permission.C2D_MESSAGE"
         android:protectionLevel="signature" />
-    <uses-permission android:name="com.example.gcm.permission.C2D_MESSAGE" />
+    <uses-permission android:name="com.infinario.android.gcm.permission.C2D_MESSAGE" />
 
-    <application android:allowBackup="true" android:label="@string/app_name">
+    <application android:allowBackup="true">
 
         <receiver
             android:name="com.infinario.android.infinariosdk.GcmBroadcastReceiver"
-            android:permission="com.google.android.c2dm.permission.SEND" >
+            android:permission="com.google.android.c2dm.permission.SEND">
             <intent-filter>
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-                <category android:name="com.example.gcm" />
+                <category android:name="com.infinario.android.gcm" />
             </intent-filter>
         </receiver>
 
-        <receiver android:name="com.infinario.android.infinariosdk.ReferrerReceiver"
-            android:exported="true" >
+        <receiver
+            android:name="com.infinario.android.infinariosdk.ReferrerReceiver"
+            android:exported="true">
             <intent-filter>
                 <action android:name="com.android.vending.INSTALL_REFERRER" />
             </intent-filter>
         </receiver>
 
-        <service android:name="com.infinario.android.infinariosdk.GcmIntentService" />
     </application>
 
 </manifest>
