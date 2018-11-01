@@ -21,12 +21,9 @@ android {
 
 buildscript {
     repositories {
+        google()
         jcenter()
         mavenCentral()
-        maven {
-            url 'https://maven.google.com/'
-            name 'Google'
-        }
     }
 
     dependencies {
@@ -42,9 +39,6 @@ dependencies {
 apply from: 'maven-push.gradle'
 
 repositories {
+    google()
     jcenter()
-    maven {
-        url 'https://maven.google.com/'
-        name 'Google'
-    }
 }
